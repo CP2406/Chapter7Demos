@@ -46,6 +46,20 @@ public class SortingAlgorithms {
             A[lastPlace] = temp;
 
         }  // end of for loop
+    }
 
+    /**
+     * Postcondition: The items in A have been rearranged into a random order.
+     */
+    static void shuffle(int[] A) {
+        for (int lastPlace = A.length - 1; lastPlace > 0; lastPlace--) {
+            // Choose a random location from among 0,1,...,lastPlace.
+            int randLoc = (int) (Math.random() * (lastPlace + 1));
+
+            // Swap items in locations randLoc and lastPlace.
+            int temp = A[randLoc];
+            A[randLoc] = A[lastPlace];
+            A[lastPlace] = temp;
+        }
     }
 }
